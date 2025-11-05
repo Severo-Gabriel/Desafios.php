@@ -1,9 +1,4 @@
-/* style.css - Caixa Eletrônico
-   Paleta: azul escuro, azul claro, cinza, branco
-   Uso: copiar como está para o projeto HTML/PHP
-*/
 
-/* --- Variáveis para facilitar mudanças --- */
 :root{
   --bg: #0f1724;          /* fundo geral */
   --panel: #0b1220;       /* painel ATM */
@@ -19,7 +14,6 @@
   --font-stack: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Reset simples */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body{
@@ -34,7 +28,6 @@ body{
   align-items: center;
 }
 
-/* --- Container principal do caixa --- */
 .atm {
   width: 420px;
   max-width: calc(100% - 40px);
@@ -47,7 +40,6 @@ body{
   gap: 14px;
 }
 
-/* Cabeçalho */
 .atm-header{
   display:flex;
   align-items:center;
@@ -75,7 +67,6 @@ body{
   color: var(--muted);
 }
 
-/* Tela / Display do caixa */
 .atm-screen{
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
   border-radius: 10px;
@@ -88,7 +79,6 @@ body{
   border: 1px solid rgba(255,255,255,0.03);
 }
 
-/* Área de mensagem/saudações */
 .screen-top{
   font-size: .95rem;
   color: #dff0ff;
@@ -105,7 +95,7 @@ body{
   font-size: .85rem;
 }
 
-/* Layout interno: teclado + painel à direita (opcional) */
+
 .atm-body{
   display: grid;
   grid-template-columns: 1fr 140px;
@@ -113,91 +103,6 @@ body{
   align-items:start;
 }
 
-/* Painel lateral (por exemplo: histórico/resumo) */
-.atm-side{
-  background: var(--glass);
-  border-radius: 10px;
-  padding: 10px;
-  min-height: 160px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  border: 1px solid rgba(255,255,255,0.03);
-}
-.side-title{ font-size:.85rem; color:var(--muted); }
-.tx-item{
-  background: rgba(255,255,255,0.02);
-  padding:8px;
-  border-radius:8px;
-  font-size:.86rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-/* Teclado numérico + botões */
-.keypad{
-  background: transparent;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  align-items: center;
-  justify-items: center;
-}
-
-/* Botões padrão do caixa */
-.btn {
-  width: 96%;
-  max-width: 120px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform .08s ease, box-shadow .08s ease;
-  box-shadow: 0 4px 12px rgba(2,6,23,0.5);
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
-  color: #eaf6ff;
-  outline: none;
-}
-.btn:active { transform: translateY(1px); }
-
-/* Botão numérico (maior) */
-.btn-num{
-  padding: 14px 0;
-  width: 100%;
-  text-align:center;
-  border-radius: 10px;
-  font-size: 1.05rem;
-  background: rgba(255,255,255,0.02);
-  color: #e6f3ff;
-  border: 1px solid rgba(255,255,255,0.03);
-}
-
-/* Botões primários (confirmar) */
-.btn-primary{
-  background: linear-gradient(180deg, var(--accent), var(--accent-2));
-  color: #03203a;
-  box-shadow: 0 8px 18px rgba(43,134,255,0.18);
-}
-.btn-primary:focus,
-.btn-primary:hover{ transform: translateY(-2px); }
-
-/* Botão secundário (corrigir / limpar) */
-.btn-secondary{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  color: var(--muted);
-  border: 1px solid rgba(255,255,255,0.03);
-}
-
-/* Botão perigoso (cancelar) */
-.btn-danger{
-  background: linear-gradient(180deg, var(--danger), #ff7b7b);
-  color: white;
-}
-
-/* Layout especial para a linha de ação (ex.: OK / CANCEL) com 2 colunas */
 .action-row{
   display:flex;
   gap:10px;
@@ -205,7 +110,6 @@ body{
 }
 .action-row .btn { flex:1; }
 
-/* Entrada visual (campo que mostra os números digitados) */
 .input-display{
   background: rgba(255,255,255,0.02);
   border-radius: 8px;
@@ -218,7 +122,6 @@ body{
   border: 1px solid rgba(255,255,255,0.03);
 }
 
-/* Cartão / resumo */
 .card {
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.06));
   border-radius: 8px;
@@ -227,7 +130,6 @@ body{
   border: 1px solid rgba(255,255,255,0.02);
 }
 
-/* Recibo (opcional) */
 .receipt {
   background: linear-gradient(180deg, #ffffff04, #ffffff02);
   padding:10px;
@@ -236,7 +138,6 @@ body{
   color: var(--muted);
 }
 
-/* Feedbacks (erro/sucesso) */
 .feedback {
   padding:8px 10px;
   border-radius:8px;
@@ -252,14 +153,13 @@ body{
   outline-offset: 2px;
 }
 
-/* Pequenas instruções / legenda */
+
 .legend {
   font-size:.76rem;
   color: var(--muted);
   margin-top:6px;
 }
 
-/* Responsividade */
 @media (max-width: 600px) {
   .atm { width: 94%; padding: 12px; }
   .atm-body { grid-template-columns: 1fr; }
@@ -268,7 +168,6 @@ body{
   .btn { max-width: none; padding: 10px; }
 }
 
-/* Extra: animação sutil para atenção (por exemplo, quando pedir senha) */
 .pulse {
   animation: pulse 1600ms infinite;
 }
