@@ -1,0 +1,116 @@
+/* ====== ESTILO: MÁQUINA DO TEMPO ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at center, #000010 20%, #020024 100%);
+  color: #66dbc2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+main {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffff44;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00ffff33;
+  padding: 40px 50px;
+  max-width: 450px;
+  width: 90%;
+  animation: aparecer 1s ease;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 25px #00ffff;
+  margin-bottom: 15px;
+  animation: brilho 2s infinite alternate;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #26a0a0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #00e6cc;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+  box-shadow: 0 0 15px #00ffff;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #00ffff, #00ffcc);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, #00ffcc, #00ffff);
+  box-shadow: 0 0 20px #00ffff;
+  transform: scale(1.05);
+}
+
+/* ====== ANIMAÇÕES ====== */
+@keyframes brilho {
+  from {
+    text-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff55;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffff, 0 0 50px #00ffff;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 500px) {
+  main {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
